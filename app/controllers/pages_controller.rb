@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @venues = Venue.where(active: true).limit(3)
+    @rooms = Room.where(active: true).limit(3)
   end
 
   def search
@@ -11,16 +11,16 @@ class PagesController < ApplicationController
 
     # STEP 2
     if session[:loc_search] && session[:loc_search] != ""
-      @venues_address = Venue.where(active: true).near(session[:loc_search], 5, order: 'distance')
+      @rooms_address = Room.where(active: true).near(session[:loc_search], 5, order: 'distance')
     else
-      @venues_address = Venue.where(active: true).all
+      @rooms_address = Room.where(active: true).all
     end
 
     # STEP 3
-    @search = @venues_address.ransack(params[:q])
-    @venues = @search.result
+    @search = @rooms_address.ransack(params[:q])
+    @rooms = @search.result
 
-    @arrVenues = @venues.to_a
+    @arrRooms = @rooms.to_a
 
     # STEP 4
     if (params[:start_date] && params[:end_date] && !params[:start_date].empty? &&  !params[:end_date].empty?)
@@ -28,9 +28,9 @@ class PagesController < ApplicationController
       start_date = Date.parse(params[:start_date])
       end_date = Date.parse(params[:end_date])
 
-      @venues.each do |venue|
+      @rooms.each do |room|
 
-        not_available = venue.reservations.where(
+        not_available = room.reservations.where(
           "((? <= start_date AND start_date <= ?)
           OR (? <= end_date AND end_date <= ?)
           OR (start_date < ? AND ? < end_date))
@@ -42,12 +42,12 @@ class PagesController < ApplicationController
         ).limit(1)
         
         not_available_in_calendar = Calendar.where(
-          "venue_id = ? AND status = ? AND day <= ? AND day >= ?",
-          venue.id, 1, end_date, start_date
+          "room_id = ? AND status = ? AND day <= ? AND day >= ?",
+          room.id, 1, end_date, start_date
         ).limit(1)
         
         if not_available.length > 0 || not_available_in_calendar.length > 0
-          @arrVenues.delete(venue)
+          @arrRooms.delete(room)
         end
       end
     end

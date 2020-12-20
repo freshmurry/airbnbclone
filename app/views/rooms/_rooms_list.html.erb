@@ -1,0 +1,27 @@
+<% rooms.each do |room| %>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading preview">
+        <%= link_to image_tag(room.cover_photo(:medium)), room %>
+        <div class="price-box-wrapper pull-right">$<%= room.price %></div>
+      </div>
+      
+      <div class="panel-body">
+        <div class="container">
+          <span class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><%= link_to room.listing_name, room %></span></br>
+          <span class="col-md-12" style="padding-left: 0px; padding-right: 0px;"><span id="star_<%= room.id %>"></span>&nbsp;<%= pluralize(room.average_rating, "review") %>
+          <!--<span class="price-box-wrapper pull-right"><b>$<= room.price %></b></span>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script>
+    $('#star_<%= room.id %>').raty({
+      path: '/assets',
+      readOnly: true,
+      score: <%= room.average_rating %>
+    });
+  </script>
+<% end %>

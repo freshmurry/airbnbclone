@@ -1,6 +1,6 @@
-# Puma can serve each request in a thread from an internal thread venue.
+# Puma can serve each request in a thread from an internal thread room.
 # The `threads` method setting takes two numbers a minimum and maximum.
-# Any libraries that use thread venues should be configured to match
+# Any libraries that use thread rooms should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
 #

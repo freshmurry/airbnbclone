@@ -1,4 +1,4 @@
-class Venue < ApplicationRecord
+class Room < ApplicationRecord
   enum instant: {Request: 0, Instant: 1}
   
   belongs_to :user, required: false
@@ -11,10 +11,11 @@ class Venue < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   
-  validates :venue_type, presence: true
-  validates :event_type, presence: true
+  validates :home_type, presence: true
+  validates :room_type, presence: true
   validates :accommodate, presence: true
-  validates :restrooms, presence: true
+  validates :bed_room, presence: true
+  validates :bath_room, presence: true
 
   def cover_photo(size)
     if self.photos.length > 0
