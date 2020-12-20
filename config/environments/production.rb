@@ -49,8 +49,8 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.web_socket_server_url = "wss://action-cable-airbnbclone.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://action-cable-airbnbclone.herokuapp.com/cable', 'https://action-cable-airbnbclone.herokuapp.com/cable' ]
+  config.web_socket_server_url = "wss://action-cable-abnbclone.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://action-cable-abnbclone.herokuapp.com/cable', 'https://action-cable-abnbclone.herokuapp.com/cable' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -93,7 +93,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   
     config.action_mailer.delivery_method = :smtp
-    host = 'airbnbclone.herokuapp.com'
+    host = 'abnbclone.herokuapp.com'
     config.action_mailer.default_url_options = { host: host }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
