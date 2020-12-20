@@ -1,5 +1,5 @@
-# ShindigSpace
+# AirbnbClone
 
-[*ShindigSpace*](https://shindigspace.herokuapp.com) is a venue space booking website.
+[*AirbnbClone*](https://airbbenclone.herokuapp.com) is a home sharing and booking website.
 
 by [Lawrence Murry](https://freshmurry.com/about)
