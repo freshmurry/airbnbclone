@@ -24,7 +24,7 @@
     <meta name="description" content="AbnbClone: Vacation Rentals, Homes, Hotels, Experiences & More.">
     <meta name="google-site-verification" content="" />
     <meta property="og:site_name" content="AbnbClone" />
-    <meta property="og:url" content="https://www.abnbclone.com" />
+    <meta property="og:url" content="https://www.abnbclone.herokuapp.com" />
     <meta property="og:title" content="AbnbClone | Book an Experience Anywhere Around the World"/>
     <meta property="og:description" content="AbnbClone: Vacation Rentals, Homes, Hotels, Experiences & More" />
     <meta property="og:type" content="website"/>
@@ -38,7 +38,7 @@
     <meta name="twitter:image" content="https://wwhttps://res.cloudinary.com/peerspace-inc/image/upload/k1e3susxysl1zr7aqpvi.jpg" />
     
     <meta name="facebook:card" content="summary" />
-    <meta name="facebook:url" content="https://www.abnbclone.com">
+    <meta name="facebook:url" content="https://www.abnbclone.herokuapp.com">
     <meta name="facebook:title" content="AbnbClone" />
     <meta property="facebook:description" content="AbnbClone: Vacation Rentals, Homes, Hotels, Experiences & More" />
     <meta name="facebook:image" content="https://wwhttps://res.cloudinary.com/peerspace-inc/image/upload/k1e3susxysl1zr7aqpvi.jpg" />
@@ -65,6 +65,13 @@
     <%= render 'shared/footer' %>
     
    <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y3RFQ6F2N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3Y3RFQ6F2N');
+    </script>
   </body>
 </html>
