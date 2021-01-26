@@ -52,10 +52,9 @@ class User < ApplicationRecord
   def send_pin
     @client = Twilio::REST::Client.new
     @client.messages.create(
-      # from: '+15005550006',
-      from: '+15084166350',
+      from: '+12568264730',
       to: self.phone_number,
-      body: "Your Abnb pin is #{self.pin}"
+      body: "Your AbnbClone pin is #{self.pin}"
     )
   end
 
