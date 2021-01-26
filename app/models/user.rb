@@ -55,7 +55,7 @@ class User < ApplicationRecord
       # from: '+15005550006',
       from: '+15084166350',
       to: self.phone_number,
-      body: "Your ShindigSpace pin is #{self.pin}"
+      body: "Your Abnb pin is #{self.pin}"
     )
   end
 
