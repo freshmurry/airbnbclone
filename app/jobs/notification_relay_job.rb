@@ -1,1 +1,0 @@
-ActionCable.server.broadcast "notifications:#{notification.recipient_id}", html: html
