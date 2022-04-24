@@ -15,58 +15,52 @@
             <div class="container">
               <%= form_for @room do |f| %>
     
-                  <div class="form-group">
-                    <div class="col-md-4">
-                      <%= f.check_box :is_kitchen %> Kitchen
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_tv %> TV
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_self_parking %> Street Parking
-                    </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_kitchen %> Kitchen
                   </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_tv %> TV
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_self_parking %> Street Parking
+                  </div>
+                </div>
 
-                  <div class="form-group">
-                    
-                    <div class="col-md-4">
-                      <%= f.check_box :is_valet_parking %> Valet Parking
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_garage_parking %> Garage Parking
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_air %> Air Conditioning
-                    </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_valet_parking %> Valet Parking
                   </div>
-                  
-                  <div class="form-group">
-                    <div class="col-md-4">
-                      <%= f.check_box :is_heathing %> Heating
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_wifi %> Wifi
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.check_box :is_handi_accessible %> Handi-Accessible
-                    </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_garage_parking %> Garage Parking
                   </div>
-                  
-                  <div class="form-group">
-                    <div class="col-md-4">
-                      <%= f.check_box :is_bar %> Bar
-                    </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_air %> Air Conditioning
                   </div>
+                </div>
                   
-                  <!--<div class="form-group">-->
-                    
-                  <!--</div>-->
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_heating %> Heating
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_wifi %> Wifi
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_handi_accessible %> Handi-Accessible
+                  </div>
+                </div>
                   
-                  <br/><br/>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_bar %> Bar
+                  </div>
+                </div>
+                <hr/>
     
-                  <div class="text-center">
-                    <%= f.submit "Save", class: "btn btn-form" %>
-                  </div>
+                <div class="form-group">
+                  <%= f.submit "Save", class: "btn btn-form" %>
+                </div>
               <% end %>
             </div>
           </div>
