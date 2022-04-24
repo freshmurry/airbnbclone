@@ -92,48 +92,44 @@
       <!-- About -->
       <div class="container">
         <div class="row">
-          <div class="panel panel-default">
-            <div class="panel-heading">About</div>
-            <div class="panel-body">
-              <div class="container">
-                <p><%= @room.summary %></p>
-              </div>  
-            </div>
+          <div class="h2" style="font-weight: bold;">About</div>
+          <div class="panel-body">
+            <div class="container">
+              <p><%= @room.summary %></p>
+            </div>  
           </div>
         </div>
       </div>  
-      <br/>
+      <hr/>
         
       <!-- AMENITIES --> 
       <div class="container">
         <div class="row">
-          <div class="panel panel-default">
-            <div class="panel-heading">Amenities</div>
-            <div class="panel-body">
-              <div class="container">
-                <div class="col">
-                  <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                      <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
-                        <li class="<%= 'text-line-through' if !@room.is_handi_accessible %>">Accessible</li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                      <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@room.is_self_parking %>">Self-Parking</li>
-                        <li class="<%= 'text-line-through' if !@room.is_valet_parking %>">Valet Parking</li>
-                        <li class="<%= 'text-line-through' if !@room.is_bar %>">Bar</li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                      <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@room.is_garage_parking %>">Garage Parking</li>
-                        <li class="<%= 'text-line-through' if !@room.is_air %>">A/C</li>
-                        <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
-                        <li class="<%= 'text-line-through' if !@room.is_wifi %>">Wifi</li>
-                      </ul>
-                    </div>
+        <div class="h2" style="font-weight: bold;">Amenities</div>
+          <div class="panel-body">
+            <div class="">
+              <div class="col">
+                <div class="">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
+                      <li class="<%= 'text-line-through' if !@room.is_handi_accessible %>">Accessible</li>
+                      <li class="<%= 'text-line-through' if !@room.is_wifi %>">Wifi</li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_self_parking %>">Self-Parking</li>
+                      <li class="<%= 'text-line-through' if !@room.is_valet_parking %>">Valet Parking</li>
+                      <li class="<%= 'text-line-through' if !@room.is_bar %>">Bar</li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_garage_parking %>">Garage Parking</li>
+                      <li class="<%= 'text-line-through' if !@room.is_air %>">A/C</li>
+                      <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -146,17 +142,15 @@
       <!-- REVIEWS -->
       <div class="container">
         <div class="row">
-          <div class="panel panel-default">
-            <div class="panel-heading">Guest Reviews (<%= @guest_reviews.count %>) <span id="average_rating"></span></div>
-            <div class="container">
-              <div class="panel-body">
-                <div><%= render "reviews/guest_list" %></div>
-              </div>
+          <div class="h2" style="font-weight: bold;">Guest Reviews (<%= @guest_reviews.count %>) <span id="average_rating"></span></div>
+          <div class="container">
+            <div class="panel-body">
+              <div><%= render "reviews/guest_list" %></div>
             </div>
           </div>
         </div>
       </div>
-            
+      <hr/>
       <!-- GOOGLE MAP -->
       <div class="container">
         <div class="row">
@@ -190,27 +184,25 @@
       <hr/>
     
       <!-- NEAR BY STAYS -->
-      <div class="panel panel-default">
-        <div class="panel-heading">Nearby Stays</div>
-          <% for room in @room.nearbys(10) %>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= image_tag room.cover_photo(:medium) %>
-            </div>
+      <div class="h2" style="font-weight: bold;">Nearby Stays</div>
+        <% for room in @room.nearbys(10) %>
+      <div class="col-md-4">
+        <div class="h2">
+          <div class="panel-heading preview">
+            <%= image_tag room.cover_photo(:medium) %>
+          </div>
                     
-            <div class="panel-body">
-              <div class="container">
-                <%= link_to room.listing_name, room %><br/>
-                (<%= room.distance.round(2) %> miles away)
-              </div>
+          <div class="panel-body">
+            <div class="container">
+              <%= link_to room.listing_name, room %><br/>
+              (<%= room.distance.round(2) %> miles away)
             </div>
           </div>
         </div>
-        <% end %>  
       </div>
+      <% end %>  
     </div>
-      
+    <hr/>
     <!-- RIGHT PANEL -->
     <div class="col-md-4">
       <!-- RESERVATION FORM -->

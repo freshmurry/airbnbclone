@@ -46,36 +46,38 @@
         <div class="description row-space-3">
           <%= @user.description %>
         </div>
+        <hr/>
         
         <!-- YOUR LISTNGS -->
-        <div class="panel panel-default">
-          <div class="panel-heading">Listings (<%= @rooms.length %>)</div>
-            <div class="panel-body">
-              <div class="container">
-                <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
-              </div>
+        <div class="">
+          <div class="h2" style="font-weight: bold;">Listings (<%= @rooms.length %>)</div>
+          <div class="panel-body">
+            <div class="container">
+              <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
             </div>
+          </div>
         </div>
+        <hr/>
         
         <!-- YOUR REVIEWS -->
-        <div class="panel panel-default">
-          <div class="panel-heading">Reviews from Guest (<%= @guest_reviews.count %>)</div>
-            <div class="container">
-              <div class="panel-body">
-                <%= render "reviews/guest_list" %>
-              </div>
-            </div>  
+        <div class="">
+          <div class="h2" style="font-weight: bold;">Reviews from Guest (<%= @guest_reviews.count %>)</div>
+          <div class="container">
+            <div class="panel-body">
+              <%= render "reviews/guest_list" %>
+            </div>
+          </div>  
         </div>
-    
-        <div class="panel panel-default">
-          <div class="panel-heading">Reviews from Host (<%= @host_reviews.count %>)</div>
-            <div class="container">
-              <div class="panel-body">
-                <%= render "reviews/host_list" %>
-              </div>
-            </div>  
+        <hr />
+        
+        <div class="">
+          <div class="h2" style="font-weight: bold;">Reviews from Host (<%= @host_reviews.count %>)</div>
+          <div class="container">
+            <div class="panel-body">
+              <%= render "reviews/host_list" %>
+            </div>
+          </div>  
         </div>
-    
       </div>
     </div>
   </div>  

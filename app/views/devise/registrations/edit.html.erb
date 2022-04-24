@@ -7,16 +7,13 @@
     
           <!-- Profile Photo -->
           <div class="avatar-full">
-            <div class="panel panel-default">
+            <div class="">
               <div class="panel-heading preview">
                 <%= image_tag avatar_url(current_user) %>
               </div>
-                      
-              <div class="panel-body">
-                <div class="container">
-                  <%= link_to "View My Profile", user_path(current_user.id), class: "btn btn-default" %>&nbsp;
-                </div>
-              </div>
+
+              <%= link_to "View My Profile", user_path(current_user.id), class: "btn btn-default" %>&nbsp;
+
             </div>
           </div>
           <!-- End of Profile Photo -->
