@@ -1,6 +1,6 @@
 <section class="">
   <div class="">
-    <div class="row">  
+    <div class="">  
       <% if @photos.length > 0 %>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -151,6 +151,7 @@
         </div>
       </div>
       <hr/>
+      
       <!-- GOOGLE MAP -->
       <div class="container">
         <div class="row">
@@ -184,25 +185,29 @@
       <hr/>
     
       <!-- NEAR BY STAYS -->
-      <div class="h2" style="font-weight: bold;">Nearby Stays</div>
-        <% for room in @room.nearbys(10) %>
-      <div class="col-md-4">
-        <div class="h2">
-          <div class="panel-heading preview">
-            <%= image_tag room.cover_photo(:medium) %>
-          </div>
-                    
-          <div class="panel-body">
-            <div class="container">
-              <%= link_to room.listing_name, room %><br/>
-              (<%= room.distance.round(2) %> miles away)
+      <div class="container">
+        <div class="row">
+          <div class=" h2" style="font-weight: bold;">Nearby Stays</div>
+            <% for room in @room.nearbys(10) %>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading preview">
+                <%= image_tag room.cover_photo(:medium) %>
+              </div>
+                        
+              <div class="panel-body">
+                <div class="container">
+                  <%= link_to room.listing_name, room %><br/>
+                  (<%= room.distance.round(2) %> miles away)
+                </div>
+              </div>
             </div>
+            <% end %>
           </div>
         </div>
-      </div>
-      <% end %>  
+      </div>  
     </div>
-    <hr/>
+
     <!-- RIGHT PANEL -->
     <div class="col-md-4">
       <!-- RESERVATION FORM -->
