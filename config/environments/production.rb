@@ -88,13 +88,13 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   #Required for Heroku
-  # config.action_mailer.default_url_options = { host: 'https://airbnbclone.herokuapp.com' }
+  # config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
 
   config.action_mailer.raise_delivery_errors = true
   
     config.action_mailer.delivery_method = :smtp
     host = 'abnbclone.herokuapp.com'
-    config.action_mailer.default_url_options = { host: host }
+    config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
