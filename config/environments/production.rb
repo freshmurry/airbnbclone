@@ -93,7 +93,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   
     config.action_mailer.delivery_method = :smtp
-    host = 'abnbclone.herokuapp.com'
+    # host = 'abnbclone.herokuapp.com'
     config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
