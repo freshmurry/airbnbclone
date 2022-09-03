@@ -1,7 +1,7 @@
 Rails.application.configure do
     config.paperclip_defaults = {
     :storage => :s3,
-    s3_host_name: "https://s3.amazonaws.com",
+    s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
@@ -85,6 +85,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
+  
   #Required for Heroku
   # config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
 
@@ -108,7 +111,4 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-  
-  # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
 end
