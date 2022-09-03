@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.paperclip_defaults = {
+    config.paperclip_defaults = {
     :storage => :s3,
     s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
     :s3_credentials => {
@@ -9,9 +9,7 @@ Rails.application.configure do
       :s3_region => ENV['AWS_REGION']
     }
   }
-  
-  Paperclip.options[:command_path] = '/opt/local/bin'
-  
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
