@@ -60,7 +60,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  # gem 'capybara'
+  gem 'capybara'
   #adding database cleaner for tests
   gem 'database_cleaner'
 end
