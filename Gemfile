@@ -10,15 +10,18 @@ gem 'rails', '~> 5.0.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 4.0.2'
 gem 'coffee-rails', '~> 4.2'
-
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
-gem 'delayed_job'
+# gem 'delayed_job'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  #adding database cleaner for tests
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -34,38 +37,24 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem "bootstrap-sass", ">= 3.4.1"
 gem "devise", ">= 4.6.0"
-
 gem 'toastr-rails', '~> 1.0'
-
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
-
-
 gem 'paperclip', '~> 5.1.0'
 gem 'aws-sdk', '~> 2.8'
-
-
 gem 'geocoder', '~> 1.5'
 gem 'jquery-ui-rails', '~> 5.0'
-
 gem 'ransack', '~> 1.7'
 gem 'puma'
 gem 'figaro'
-gem 'redis'
+# gem 'redis'
 
 group :production do
   gem 'pg', '~> 0.20.0'
   gem 'rails_12factor'
 end
 
-group :test, :development do
-  gem 'rspec-rails'
-  gem 'capybara'
-  #adding database cleaner for tests
-  gem 'database_cleaner'
-end
-
-gem 'capistrano'
+# gem 'capistrano'
 
 #----  AirKONG  -------
 gem 'twilio-ruby', '~> 4.11.1'
