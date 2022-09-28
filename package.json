@@ -3,11 +3,3 @@
   "private": true,
   "dependencies": {}
 }
-
-"scripts": {
-   "start": "node index.js"
-}
-
-"scripts": {
-  "postinstall": "ng build"
-}
