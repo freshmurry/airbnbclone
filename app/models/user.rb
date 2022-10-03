@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -65,7 +68,10 @@ class User < ApplicationRecord
   def is_active_host
     !self.merchant_id.blank?
   end
-
+  
+  def user_params
+    params.require(:user).permit(image: [:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
+  end
 end
 
 # Strict password security measures. *Uncomment when app goes live!*

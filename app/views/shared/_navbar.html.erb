@@ -12,13 +12,23 @@
       <!--< link_to image_tag("icon.svg", alt: "logo"), root_path, class: "navbar-brand" %>-->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
+    
     <div id="navbar" class="navbar-collapse collapse">
-     <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-          <div class="form-group">
-            <%= text_field_tag :search, params[:search], placeholder: "Homes Near You", class: "form-control", id:"autoaddress" %>
+      <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Homes, Rooms, etc.", class: "form-control", id: "autolocation" %>
+        <div class="form-group justify-content-center">
+          <div class="col-md-3">
+            <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
           </div>
+          <div class="col-md-3">
+            <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+          </div>
+          <div class="col-md-3">
+            <%= submit_tag "Search", class: "btn btn-form btn-block" %>
+          </div>
+        </div>
       <% end %>
-      
+
       <ul class="nav navbar-nav navbar-right">
         <% if (!user_signed_in?) %>
           <li>
@@ -29,6 +39,7 @@
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% else %>
+      
           <li>
             <button class="btn btn-form btn-small">
               <%= link_to "Become a Host", new_room_path, style: "color: white; text-decoration: none;" %>
@@ -44,7 +55,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
               role="button" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
+              <%= image_tag current_user.image.url(), class: "img-circle avatar-small" %>&nbsp;
               <%= current_user.fullname %> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
