@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png"
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+  validates_attachment_size :image, :less_than => 5.megabytes
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   # Include default devise modules. Others available are:
@@ -70,7 +71,7 @@ class User < ApplicationRecord
   end
   
   def user_params
-    params.require(:user).permit(image: [:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
+    params.require(:user).permit(:image)
   end
 end
 
