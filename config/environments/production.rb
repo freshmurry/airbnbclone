@@ -60,8 +60,8 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.web_socket_server_url = "wss://action-cable-abnbclone.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://action-cable-abnbclone.herokuapp.com/cable', 'https://action-cable-abnbclone.herokuapp.com/cable' ]
+  config.web_socket_server_url = "wss://action-cable-abnbcribs.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://action-cable-abnbcribs.herokuapp.com/cable', 'https://action-cable-abnbcribs.herokuapp.com/cable' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
@@ -99,20 +99,20 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #Required for Heroku
-  # config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
+  # config.action_mailer.default_url_options = { host: 'https://abnbcribs.herokuapp.com' }
 
   config.action_mailer.raise_delivery_errors = true
   
     config.action_mailer.delivery_method = :smtp
-    # host = 'abnbclone.herokuapp.com'
-    config.action_mailer.default_url_options = { host: 'https://abnbclone.herokuapp.com' }
+    # host = 'abnbcribs.herokuapp.com'
+    config.action_mailer.default_url_options = { host: 'https://abnbcribs.herokuapp.com' }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
       :authentication => :plain,
       :user_name      => ENV['SENDGRID_USERNAME'],
       :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => 'https://abnbclone.herokuapp.com',
+      :domain         => 'https://abnbcribs.herokuapp.com',
       :enable_starttls_auto => true
     }
   
